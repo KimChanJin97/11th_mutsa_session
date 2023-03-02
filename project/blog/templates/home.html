@@ -1,0 +1,15 @@
+<h1>LikeLion 11th Blog Project</h1>
+<br />
+<a href="{% url 'blog:new' %}">새 글 작성하기</a>
+{% for blog in blogs %}
+<div>
+    <a href="{% url 'blog:detail' blog.id %}">
+        <h5>{{blog.title}}</h5>
+        <p>{{blog.id}}</p>
+        <p>{{blog.created_at}}<p>
+        <p>{{blog.content}}</p>
+        <p>{{blog.summary}}</p>
+    </a>
+</div>
+<br />
+{% endfor %}
